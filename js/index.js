@@ -1,30 +1,26 @@
-let km = prompt('Quanti km vuoi percorrere?');
+let km = prompt('Quanti km vuoi percorrere?'); // 10
 let anni = prompt('Quanti anni hai?');
-
-
-
-let prezzoPieno = (parseInt('0.21').toFixed(2));
-console.log(prezzoPieno)
-
-
-
+let prezzoPieno = km * 0.21;
 
 const minorenni = 17;
 const over = 65;
 let sconto_40 = '40% Sconto';
 let sconto_20 = '20% Sconto';
 
+let prezzoTot40 = (prezzoPieno - (40 * prezzoPieno / 100)).toFixed(2);
+let prezzoTot20 = (prezzoPieno - (20 * prezzoPieno / 100)).toFixed(2);
+
 if (anni >= over){
-    sconto_40
-    console.log (sconto_40)
+    console.log('COSTO PER GLI OVER',prezzoTot40)
 }else if (anni <= minorenni){
-    sconto_20
-    console.log (sconto_20)
+    console.log('COSTO PER IL MINORENNE', prezzoTot20)
 }else{
-    prezzoPieno
-    console.log (prezzoPieno)
+    console.log('PREZZO PIRENO', prezzoPieno)
 }
 
 console.log (anni, km);
-document.getElementById('km').innerHTML = (km + 'Km');
-document.getElementById('anni').innerHTML = (anni + 'Anni');
+document.getElementById('km').innerHTML = (km + ' Km');
+document.getElementById('anni').innerHTML = (anni + ' Anni');
+document.getElementById('no-sconto').innerHTML = ('Prezzo normale ' + prezzoPieno + ' €');
+document.getElementById('costo-tot-minorenni').innerHTML = ('Prezzo per i minorenni ' + prezzoTot20 + ' €');
+document.getElementById('costo-tot-over').innerHTML = ('Prezzo per gli over 65 ' + prezzoTot40 + ' €');
