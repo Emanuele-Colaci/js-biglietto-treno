@@ -3,7 +3,7 @@ let km = prompt('Quanti km vuoi percorrere?'); // 10
 let anni = prompt('Quanti anni hai?');
 let prezzoPieno = km * 0.21;
 //ANNI E SCONTISTICHE 
-const minorenni = 17;
+const minorenni = 18;
 const over = 65;
 let sconto_40 = '40% Sconto';
 let sconto_20 = '20% Sconto';
@@ -11,9 +11,9 @@ let sconto_20 = '20% Sconto';
 let prezzoTot40 = (prezzoPieno - (40 * prezzoPieno / 100)).toFixed(2);
 let prezzoTot20 = (prezzoPieno - (20 * prezzoPieno / 100)).toFixed(2);
 //SE E ALTRIMENTI
-if (anni >= over){
+if (anni > over){
     console.log('COSTO PER GLI OVER',prezzoTot40)
-}else if (anni <= minorenni){
+}else if (anni < minorenni){
     console.log('COSTO PER IL MINORENNE', prezzoTot20)
 }else{
     console.log('PREZZO PIRENO', prezzoPieno)
